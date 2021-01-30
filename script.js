@@ -1,6 +1,7 @@
 let firstIncrease = document.getElementById('firstclass-increase');
 let firstDecrease = document.getElementById('firstclass-decrease');
 
+document.getElementById('bookingConfirmation').disabled = true;
 const firstClassTicketPrice = 150;
 const economyClassTicketPrice = 100;
 
@@ -19,7 +20,7 @@ function handleChange(type, isIncrease) {
     totalPrice = ticketInputNewCount * economyClassTicketPrice;
   }
 
-  calculateTotal()
+  calculateTotal();
 }
 
 function calculateTotal() {
@@ -35,6 +36,8 @@ function calculateTotal() {
   document.getElementById('vat-amount').innerText = '$' + tax;
   const grandTotal = totalTicketPrice + tax;
   document.getElementById('grand-total').innerText = '$' + grandTotal;
+
+  document.getElementById('bookingConfirmation').disabled = false;
 }
 
 function confirmation() {
